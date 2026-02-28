@@ -57,6 +57,68 @@ Le développement a été réalisé selon une approche modulaire, consistant à 
 
 Cette méthode favorise une architecture évolutive, permettant d’ajouter de nouvelles fonctionnalités sans altérer la structure existante.
 
-  
+    Résumé
+ Description des fichiers
+1. main.py
+Point d’entrée principal de l’application.
+Il permet de :
+- Lancer le serveur
+- Initialiser l’application
+- Connecter les différentes parties du projet
+- Définir les routes principales (selon l’architecture choisie)
+C’est le fichier exécuté pour démarrer l’API : python main.py
+2- app/
+Contient la logique principale de l’application.
+
+-   __init__.py
+Permet de déclarer le dossier app comme un module Python.
+Il peut également :
+- Initialiser l’application
+- Configurer les extensions
+- Centraliser les imports principaux
+
+  - config.py
+Fichier de configuration du projet.
+Il contient :
+- Paramètres de connexion à la base de données
+- Variables d’environnement
+- Clés secrètes
+- Configuration du mode debug / production
+Permet de séparer la configuration du reste du code.
+
+- db.py
+Gère la connexion à la base de données.
+Responsabilités :
+- Initialisation de la connexion
+- Gestion des sessions
+- Exécution des requêtes SQL
+- Centralisation de l’accès aux données
+Évite de dupliquer la connexion partout dans le projet.
+
+-  repository.py
+Contient la logique d’accès aux données.
+Rôle :
+- Effectuer les requêtes vers la base
+- Manipuler les objets métiers
+- Séparer la logique métier de la logique de base de données
+Applique le principe de séparation des responsabilités.
+
+  - requirements.txt
+Liste des dépendances Python nécessaires au projet.
+Installation : pip install -r requirements.txt
+Permet à toute personne clonant le projet d’installer exactement les bonnes versions.
+
+ -  .gitignore
+Liste des fichiers et dossiers ignorés par Git.
+Exemple :
+venv/
+__pycache__/
+*.pyc
+.env
+
+Permet d’éviter de versionner :
+- Fichiers temporaires
+- Environnements virtuels
+- Fichiers sensibles
 
 
